@@ -17,6 +17,14 @@ RUN npm ci --only=production
 COPY . .
 
 # env
+ENV PRIVATE_KEY /tmp/.ssh/node-auth-private.key
+ENV PUBLIC_KEY /tmp/.ssh/node-auth-public.key
+
+ENV IISUSER a-million-projects
+ENV SUBJECT some@user.com
+ENV AUDIENCE http://admin.a-million-projects.com
+ENV EXPIRESIN 12h
+
 ENV NODE_ENV production
 ENV MONGODB_URI "mongodb://mongo:27017/a-million-projects"
 ENV PORT 3002

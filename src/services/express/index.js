@@ -5,6 +5,7 @@ import morgan from 'morgan'
 import bodyParser from 'body-parser'
 import { errorHandler as queryErrorHandler } from 'querymen'
 import { errorHandler as bodyErrorHandler } from 'bodymen'
+import { verifyAuth } from '../auth'
 import { env } from '../../config'
 
 export default (apiRoot, routes) => {
@@ -17,6 +18,7 @@ export default (apiRoot, routes) => {
     app.use(morgan('dev'))
   }
 
+  app.use(verifyAuth)
   app.use(bodyParser.urlencoded({ extended: false }))
   app.use(bodyParser.json())
   app.use(apiRoot, routes)

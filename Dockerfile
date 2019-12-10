@@ -17,7 +17,6 @@ RUN npm ci --only=production
 COPY . .
 
 # env
-ENV PRIVATE_KEY /tmp/.ssh/node-auth-private.key
 ENV PUBLIC_KEY /tmp/.ssh/node-auth-public.key
 
 ENV IISUSER a-million-projects

@@ -19,7 +19,7 @@ COPY . .
 # env
 ENV PUBLIC_KEY /tmp/.ssh/node-auth-public.key
 
-ENV IISUSER a-million-projects
+ENV ISSUER a-million-projects
 ENV SUBJECT some@user.com
 ENV AUDIENCE http://admin.a-million-projects.com
 ENV EXPIRESIN 12h

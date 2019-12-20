@@ -3,7 +3,7 @@
 const fs   = require('fs');
 const jwt = require('jsonwebtoken');
 
-const publicKEY  = fs.readFileSync(process.env.PUBLIC_KEY, 'utf8');
+const publicKey  = fs.readFileSync(process.env.PUBLIC_KEY, 'utf8');
 
 const issuer  = process.env.ISSUER;
 const subject  = process.env.SUBJECT;
@@ -20,7 +20,7 @@ const verifyOptions = {
 
 const verifyJWT = (token) => {
   try {
-    const verification = jwt.verify(token, publicKEY, verifyOptions);
+    const verification = jwt.verify(token, publicKey, verifyOptions);
     return verification;
   } catch (e) {
     return false;
